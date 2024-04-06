@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
     <link rel="stylesheet" href="../styles/stylesdl.css">
-    </style>
 </head>
 <body>
     <div class="container">
@@ -27,14 +26,21 @@
                 // Hiển thị hình ảnh bên trái
                 $imagePath = '../img/' . $productDetails['hinh']; // Đường dẫn đến hình ảnh
                 echo '<div class="product">';
+                echo '<div class="product-image">';
+                echo '<strong class="product-name">' . $productDetails['ten_mon'] . '</strong>';
                 echo '<img src="' . $imagePath . '" alt="Product Image">';
+                
+                echo '</div>';
                 // Hiển thị thông tin chi tiết của sản phẩm
                 echo "<div class='product-details'>"; // Đảm bảo thông tin chi tiết không trôi ra ngoài ảnh
-                echo "<h1>Product Details</h1>";
-                echo "<strong>Name:</strong> " . $productDetails['ten_mon'] . "<br>";
-                echo "<strong>Description:</strong> " . $productDetails['noi_dung_chi_tiet'] . "<br>";
-                echo "<strong>Price:</strong> " . $productDetails['don_gia'] . " VND<br>";
-                // Các thông tin khác về sản phẩm có thể được hiển thị ở đây
+                echo "<p class='short-description'>" . $productDetails['noi_dung_tom_tat'] . "</p>"; // Display short description
+                echo "<p class='long-description'>" . $productDetails['noi_dung_chi_tiet'] . "</p>"; // Display long description
+                echo "<p><strong>Price:</strong> " . $productDetails['don_gia'] . " VND</p>"; // Display price
+                echo "<div class='quantity-box'>";
+                echo "<label for='quantity'>SL: </label>"; // Add label for quantity
+                echo "<input type='number' min='1' value='1' id='quantity'>"; // Input for quantity
+                echo '<button class="buy-now-btn">Buy Now</button>'; // Add Buy Now button
+                echo "</div>";
                 echo "</div>";
                 echo "</div>";
             } else {

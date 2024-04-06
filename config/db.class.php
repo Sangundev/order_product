@@ -15,7 +15,7 @@ class Db {
             if (self::$connection->connect_error) {
                 die("Kết nối thất bại: " . self::$connection->connect_error);
             } 
-            echo "Kết nối thành công"; // Xuất thông báo thành công khi kết nối
+            // echo "Kết nối thành công"; // Xuất thông báo thành công khi kết nối
         }
         
         return self::$connection;

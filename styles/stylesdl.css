@@ -1,27 +1,70 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
+
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .product {
-    overflow: hidden;
-    margin-bottom: 30px;
+    display: flex;
+    margin-bottom: 20px;
 }
-.product img {
-    float: left;
-    margin-right: 20px;
-    max-width: 300px;
+
+.product-name {
+    flex: 1; /* Take up remaining space */
+    margin-right: 20px; /* Add spacing between product name and image */
 }
+
+.product-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
 .product-details {
-    overflow: hidden;
+    flex-grow: 1;
+    padding: 0 20px;
 }
-.product-details h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-.product-details strong {
+
+.short-description {
     font-weight: bold;
+}
+
+.quantity-box {
+    margin-top: 10px;
+    display: flex; /* Align quantity input and button horizontally */
+    align-items: center; /* Align vertically center */
+}
+
+.quantity-box label {
+    margin-right: 10px; /* Add spacing between label and input field */
+}
+
+.quantity-box input[type='number'] {
+    width: 50px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.buy-now-btn {
+    background-color: #ff7f00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-now-btn:hover {
+    background-color: #cc6600;
 }

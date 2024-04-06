@@ -1,63 +1,42 @@
-.dish {
-    flex-basis: calc(18% - 10px); /* Điều chỉnh kích thước cố định của mỗi sản phẩm và điều chỉnh lại khoảng cách */
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 20px; /* Giảm khoảng cách bên phải để các sản phẩm sát nhau */
-}
+/* Styles.css */
 
-.dish img {
-    max-width: 400px;
-    max-height: 680px; 
-    width: auto;
-    height: auto;
-    display: block;
-}
-
-/* Đặt vị trí của .detail-button */
-.detail-button {
-    background-color: red; /* Đổi màu nền của nút button thành đỏ */
-    color: white;
-    padding: 10px 20px; /* Điều chỉnh padding của nút button */
-    border-radius: 3px;
-    position: absolute;
-    bottom: 10px;
-    left: 0; /* Đặt left là 0 để nút button bắt đầu từ cạnh trái của .dish */
-    right: 0; /* Đặt right là 0 để nút button kết thúc tại cạnh phải của .dish */
-    margin: 0 auto; /* Để căn giữa nút button theo chiều ngang */
-    text-align: center; /* Để căn giữa nội dung của nút button */
-}
-
-/* Chiều rộng của .dish-details sẽ tự động co giãn để bao phủ nút button */
-.dish-details {
-    padding: 10px;
-    background-color: #f9f9f9;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 40px; /* Tăng margin bottom để tạo không gian cho nút button */
-}
-
-/* Loại bỏ margin bên dưới cho .dish */
-.dish:last-child {
-    margin-bottom: 0;
-}
-
-
-.detail-button:hover {
-    background-color: darkred; /* Đổi màu nền của nút button khi di chuột qua thành màu đỏ đậm */
-}
-
-
-.row {
-    display: flex;
-    justify-content: center; /* Căn các ô sản phẩm theo trục ngang */
-}
-
-.dishes-container {
+/* Phân chia mỗi hàng thành 4 cột */
+.dishes-container .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Căn các ô sản phẩm theo trục ngang */
+    justify-content: space-between; /* Các sản phẩm sẽ được căn giữa */
 }
-a.detail-button {
-    margin-bottom: -10px;
+
+/* Viền cho mỗi sản phẩm */
+.dish {
+    width: calc(25% - 2rem); /* Để có 4 sản phẩm trên mỗi hàng, chiếm 25% và trừ đi khoảng cách giữa các sản phẩm */
+    margin-bottom: 2rem; /* Khoảng cách giữa các sản phẩm */
+    border: 1px solid #ddd; /* Màu và độ dày của viền */
+    padding: 1rem; /* Khoảng cách giữa nội dung và viền */
+    box-sizing: border-box; /* Đảm bảo rằng viền không tăng kích thước của phần tử */
+}
+
+/* Chỉnh lại kích thước hình ảnh để nó không bị vượt ra khỏi khu vực chứa */
+.dish img {
+    max-width: 100%;
+    height: auto;
+}
+.detail-button {
+    background-color: #f44336; /* Màu đỏ */
+    border: none;
+    color: white; /* Màu chữ trắng */
+    padding: 1rem 2rem; /* Kích thước đệm */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    margin: 0.4rem 0.2rem;
+    cursor: pointer; /* Con trỏ hiệu ứng khi di chuột qua nút */
+    border-radius: 0.4rem; /* Bo tròn góc */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+/* Hiệu ứng hover cho nút Details */
+.detail-button:hover {
+    background-color: #d32f2f; /* Màu đỏ nhạt khi di chuột qua */
 }
