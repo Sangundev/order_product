@@ -1,0 +1,54 @@
+.dish {
+    flex-basis: calc(25% - 15px); /* Đặt kích thước cố định cho mỗi sản phẩm */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+    margin-left: 5px; /* Thêm 5px vào khoảng cách bên trái */
+    margin-right: 5px; /* Thêm 5px vào khoảng cách bên phải */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Các sản phẩm sẽ được căn trên dòng với khoảng cách đều ở cả bên trái và bên phải */
+    width: calc(100% - 10px); /* Thay đổi kích thước của hàng để phù hợp với margin của sản phẩm */
+    margin-left: 5px; /* Loại bỏ khoảng trắng ở đầu hàng */
+    margin-right: 5px; /* Loại bỏ khoảng trắng ở cuối hàng */
+}
+
+.dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dish img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.dish-details {
+    padding: 10px;
+    background-color: #f9f9f9;
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.detail-button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.detail-button:hover {
+    background-color: darkorange;
+}
