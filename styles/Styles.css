@@ -1,54 +1,63 @@
 .dish {
-    flex-basis: calc(25% - 15px); /* Đặt kích thước cố định cho mỗi sản phẩm */
+    flex-basis: calc(18% - 10px); /* Điều chỉnh kích thước cố định của mỗi sản phẩm và điều chỉnh lại khoảng cách */
     margin-bottom: 20px;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
-    overflow: hidden;
-    display: block;
-    margin-left: 5px; /* Thêm 5px vào khoảng cách bên trái */
-    margin-right: 5px; /* Thêm 5px vào khoảng cách bên phải */
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Các sản phẩm sẽ được căn trên dòng với khoảng cách đều ở cả bên trái và bên phải */
-    width: calc(100% - 10px); /* Thay đổi kích thước của hàng để phù hợp với margin của sản phẩm */
-    margin-left: 5px; /* Loại bỏ khoảng trắng ở đầu hàng */
-    margin-right: 5px; /* Loại bỏ khoảng trắng ở cuối hàng */
-}
-
-.dishes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin-right: 20px; /* Giảm khoảng cách bên phải để các sản phẩm sát nhau */
 }
 
 .dish img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 400px;
+    max-height: 680px; 
     width: auto;
     height: auto;
     display: block;
 }
 
+/* Đặt vị trí của .detail-button */
+.detail-button {
+    background-color: red; /* Đổi màu nền của nút button thành đỏ */
+    color: white;
+    padding: 10px 20px; /* Điều chỉnh padding của nút button */
+    border-radius: 3px;
+    position: absolute;
+    bottom: 10px;
+    left: 0; /* Đặt left là 0 để nút button bắt đầu từ cạnh trái của .dish */
+    right: 0; /* Đặt right là 0 để nút button kết thúc tại cạnh phải của .dish */
+    margin: 0 auto; /* Để căn giữa nút button theo chiều ngang */
+    text-align: center; /* Để căn giữa nội dung của nút button */
+}
+
+/* Chiều rộng của .dish-details sẽ tự động co giãn để bao phủ nút button */
 .dish-details {
     padding: 10px;
     background-color: #f9f9f9;
-    max-height: 120px;
     overflow: hidden;
+    position: relative;
+    margin-bottom: 40px; /* Tăng margin bottom để tạo không gian cho nút button */
 }
 
-.detail-button {
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
+/* Loại bỏ margin bên dưới cho .dish */
+.dish:last-child {
+    margin-bottom: 0;
 }
+
 
 .detail-button:hover {
-    background-color: darkorange;
+    background-color: darkred; /* Đổi màu nền của nút button khi di chuột qua thành màu đỏ đậm */
+}
+
+
+.row {
+    display: flex;
+    justify-content: center; /* Căn các ô sản phẩm theo trục ngang */
+}
+
+.dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Căn các ô sản phẩm theo trục ngang */
+}
+a.detail-button {
+    margin-bottom: -10px;
 }

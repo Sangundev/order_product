@@ -4,8 +4,6 @@ $monAnModel = new MonAn(); // Tạo một thể hiện mới của lớp MonAn
 $offset = isset($_GET['page']) ? ($_GET['page'] - 1) * 10 : 0;
 $dishes = $monAnModel->getAllMonAn($offset); // Gọi phương thức từ đối tượng mới này
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +13,6 @@ $dishes = $monAnModel->getAllMonAn($offset); // Gọi phương thức từ đố
     <link rel="stylesheet" href="../styles/Styles.css">
 </head>
 <body>
-    <h1>List of Dishes</h1>
     <div class="dishes-container">
         <div class="row">
             <?php 
@@ -26,8 +23,10 @@ $dishes = $monAnModel->getAllMonAn($offset); // Gọi phương thức từ đố
                     <img src="<?php echo $imagePath; ?>" alt="<?php echo $dish['ten_mon']; ?>">
                     <div class="dish-details">
                         <strong><?php echo $dish['ten_mon']; ?></strong><br>
-                        Price: <?php echo $dish['don_gia']; ?> VND<br>
-                        <button class="detail-button">Details</button>
+                        <?php echo $dish['noi_dung_tom_tat']; ?> VND<br>
+                        Price: <?php echo $dish['don_gia']; ?><br>
+                        <br> <!-- Thêm thẻ br để ngăn cách giữa giá và nút Details -->
+                        <a class="detail-button" href="details.php?id=<?php echo $dish['ma_mon']; ?>">Details</a>
                     </div>
                 </div>
                 <?php 
